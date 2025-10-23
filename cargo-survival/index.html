@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo Ship: Survival</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>🚢 Cargo Ship: Survival</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-label">Day:</span>
+                    <span id="day">1</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Disasters Survived:</span>
+                    <span id="disasters">0/25</span>
+                </div>
+            </div>
+        </div>
 
+        <div class="main-content">
+            <!-- Visual Game Area -->
+            <div class="game-area">
+                <canvas id="gameCanvas" width="800" height="500"></canvas>
+                <div id="disasterMessage" class="disaster-message"></div>
+            </div>
+
+            <!-- Player Status -->
+            <div class="status-bars">
+                <div class="status-item">
+                    <span>❤️ Health:</span>
+                    <div class="bar-container">
+                        <div id="healthBar" class="bar health-bar" style="width: 100%"></div>
+                    </div>
+                    <span id="healthText">100%</span>
+                </div>
+                <div class="status-item">
+                    <span>🧠 Sanity:</span>
+                    <div class="bar-container">
+                        <div id="sanityBar" class="bar sanity-bar" style="width: 100%"></div>
+                    </div>
+                    <span id="sanityText">100%</span>
+                </div>
+                <div class="status-item">
+                    <span>🍖 Food:</span>
+                    <div class="bar-container">
+                        <div id="foodBar" class="bar food-bar" style="width: 100%"></div>
+                    </div>
+                    <span id="foodText">100%</span>
+                </div>
+                <div class="status-item">
+                    <span>💧 Water:</span>
+                    <div class="bar-container">
+                        <div id="waterBar" class="bar water-bar" style="width: 100%"></div>
+                    </div>
+                    <span id="waterText">100%</span>
+                </div>
+                <div class="status-item">
+                    <span>🚢 Ship:</span>
+                    <div class="bar-container">
+                        <div id="shipBar" class="bar ship-bar" style="width: 100%"></div>
+                    </div>
+                    <span id="shipText">100%</span>
+                </div>
+            </div>
+
+            <!-- Inventory -->
+            <div class="inventory">
+                <h3>Inventory</h3>
+                <div class="inventory-items">
+                    <div class="inventory-item">
+                        <span>🩹 Medical Kits:</span>
+                        <span id="medicalKits">1</span>
+                    </div>
+                    <div class="inventory-item">
+                        <span>🔧 Repair Kits:</span>
+                        <span id="repairKits">1</span>
+                    </div>
+                    <div class="inventory-item">
+                        <span>🍞 Emergency Rations:</span>
+                        <span id="rations">2</span>
+                    </div>
+                    <div class="inventory-item">
+                        <span>💦 Fresh Water:</span>
+                        <span id="freshWater">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions" id="actions">
+            <p>Click "Next Disaster" to begin your survival journey...</p>
+            <button id="nextDisaster" class="action-btn">Next Disaster</button>
+            <button id="useMedical" class="action-btn" disabled>Use Medical Kit</button>
+            <button id="useRepair" class="action-btn" disabled>Use Repair Kit</button>
+            <button id="useRations" class="action-btn" disabled>Use Rations</button>
+            <button id="useWater" class="action-btn" disabled>Use Water</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
